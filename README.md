@@ -1,4 +1,6 @@
 # Discord neural network
 
-Aklan Péter
+Made by: Aklan Péter,
 E0TTPA
+
+
