@@ -1,0 +1,36 @@
+<application>
+  <component name="ShownTips">
+    <option name="shownTips">
+      <map>
+        <entry key="AnnotationsAndDiffs.html" value="1647255152505" />
+        <entry key="BreakpointSpeedmenu.html" value="1652005043934" />
+        <entry key="ChangeSorting.html" value="1652122465659" />
+        <entry key="ClipboardStack.html" value="1651160378962" />
+        <entry key="Close_all_editor_tabs.html" value="1651506625362" />
+        <entry key="ColumnSelection.html" value="1651607442915" />
+        <entry key="CommentCode.html" value="1647253898031" />
+        <entry key="CtrlW.html" value="1647255151276" />
+        <entry key="EditRegExp.html" value="1651852213968" />
+        <entry key="EditorConfig.html" value="1647255148326" />
+        <entry key="EvaluateExpressionInEditor.html" value="1646400072222" />
+        <entry key="FileStructurePopup.html" value="1647255152667" />
+        <entry key="JoinLines.html" value="1647255153006" />
+        <entry key="LineEndings.html" value="1651760149929" />
+        <entry key="LineEndingsFolder.html" value="1653037612917" />
+        <entry key="Managepy.html" value="1652547382062" />
+        <entry key="MenuItemsDescriptions.html" value="1648132606021" />
+        <entry key="MethodUpDown.html" value="1647255153189" />
+        <entry key="NavBar.html" value="1650568075117" />
+        <entry key="PrintKeywords.html" value="1647255152286" />
+        <entry key="QuickFixRightArrow.html" value="1647255152844" />
+        <entry key="RunConfigFolders.html" value="1650110031855" />
+        <entry key="ShowHideSideBars.html" value="1653212252936" />
+        <entry key="SpeedSearch.html" value="1647255151972" />
+        <entry key="Spellchecker.html" value="1648223128479" />
+        <entry key="SpellcheckerDictionaries.html" value="1647255152315" />
+        <entry key="TabInLookups.html" value="1649342548707" />
+        <entry key="TypeHinting.html" value="1652287647345" />
+      </map>
+    </option>
+  </component>
+</application>
