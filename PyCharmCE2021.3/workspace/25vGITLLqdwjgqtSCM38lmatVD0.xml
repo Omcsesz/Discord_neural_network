@@ -1,0 +1,280 @@
+<project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="onlab" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary">
+    <fileType name="PLAIN_TEXT">
+      <summary usageCount="1" lastUsed="1648143241895" />
+    </fileType>
+    <fileType name="Python">
+      <summary usageCount="84" lastUsed="1653212246020" />
+    </fileType>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>discord_gud</find>
+      <find>discord_bad</find>
+      <find>gud</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>good</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\pethu\PycharmProjects\onlab</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/main.py" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="onlab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlab" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="onlab-history" />
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1803748" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Bookmarks" order="2" side_tool="true" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Learn" order="4" />
+      <window_info id="Pull Requests" order="5" />
+      <window_info id="Space Code Reviews" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3297414" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="5" weight="0.28221154" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.34439656" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Python Packages" order="8" visible="true" weight="0.3297414" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3297414" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3297414" />
+      <window_info anchor="bottom" id="Services" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Space Automation" order="0" />
+      <window_info anchor="right" id="documentation.v2" order="1" side_tool="true" />
+    </layout>
+    <recentWindows>
+      <value>Python Packages</value>
+      <value>Project</value>
+      <value>Debug</value>
+      <value>Run</value>
+      <value>Problems View</value>
+      <value>Find</value>
+      <value>Python Console</value>
+      <value>Terminal</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="958" height="193" key="DebuggerActiveHint" timestamp="1651228306168">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="958" height="193" key="DebuggerActiveHint/0.0.1920.1160@0.0.1920.1160" timestamp="1651228306168" />
+    <state width="1899" height="371" key="GridCell.Tab.0.bottom" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1651769246033" />
+    <state width="1899" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.0.center" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1651769246033" />
+    <state width="1899" height="371" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.0.left" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1651769246033" />
+    <state width="1899" height="371" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.0.right" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1651769246033" />
+    <state width="1899" height="371" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.1.bottom" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1651769225996" />
+    <state width="1899" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.1.center" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1651769225996" />
+    <state width="1899" height="371" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.1.left" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1651769225996" />
+    <state width="1899" height="371" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="1899" height="371" key="GridCell.Tab.1.right" timestamp="1652564116020">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1899" height="330" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1651769225996" />
+    <state width="1899" height="371" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1652564116020" />
+    <state width="968" height="588" key="XDebugger.FullValuePopup" timestamp="1651226480784">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="968" height="588" key="XDebugger.FullValuePopup/0.0.1920.1160@0.0.1920.1160" timestamp="1651226480784" />
+    <state x="1026" y="199" width="565" height="798" key="find.popup" timestamp="1651241596311">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="1026" y="199" width="565" height="798" key="find.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1651241596311" />
+    <state x="623" y="255" width="672" height="685" key="search.everywhere.popup" timestamp="1652550889298">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="623" y="255" width="672" height="685" key="search.everywhere.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1652550889298" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dc_hang_onlab_lyo.csv" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="2071" selection-start-line="2071" selection-end-line="2071" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/metrics/_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-941">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="3622" selection-start-line="3622" selection-end-line="3622" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/internals/construction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="590" selection-start-line="590" selection-end-line="590" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/internals/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/io/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="788" selection-start-line="788" selection-end-line="788" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filej5tctip8.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filetam7nrdl.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filezqxz_ks7.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filelryovle3.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_fileb4ei1hol.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_file4wz4lq1g.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_file9a6x74ko.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filelcjv_2lu.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filew03yj281.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/internals/managers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="1234" selection-start-line="1234" selection-end-line="1234" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/__autograph_generated_filec907oenn.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/keras/engine/data_adapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="983" selection-start-line="983" selection-end-line="983" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/keras/utils/traceback_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4073">
+          <caret line="595" selection-start-line="595" selection-end-line="595" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

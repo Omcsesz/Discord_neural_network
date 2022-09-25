@@ -1,0 +1,196 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$Undo">
+      <i c="97" l="1652550318913" />
+    </e>
+    <e n="About">
+      <i c="1" l="1652009015191" />
+    </e>
+    <e n="ActivateProjectToolWindow">
+      <i c="1" l="1648223651933" />
+    </e>
+    <e n="Debug">
+      <i c="244" l="1652560491407" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="2113" l="1652554031725" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="8" l="1652553816978" />
+    </e>
+    <e n="EditorChooseLookupItemReplace">
+      <i c="348" l="1652554049834" />
+    </e>
+    <e n="EditorCopy">
+      <i c="93" l="1652289446552" />
+    </e>
+    <e n="EditorCut">
+      <i c="23" l="1652009950655" />
+    </e>
+    <e n="EditorDelete">
+      <i c="512" l="1652554006857" />
+    </e>
+    <e n="EditorDown">
+      <i c="1083" l="1652554052017" />
+    </e>
+    <e n="EditorDownWithSelection">
+      <i c="68" l="1651921125736" />
+    </e>
+    <e n="EditorEnter">
+      <i c="315" l="1653038289733" />
+    </e>
+    <e n="EditorIndentSelection">
+      <i c="2" l="1651932655919" />
+    </e>
+    <e n="EditorLeft">
+      <i c="1599" l="1652554054208" />
+    </e>
+    <e n="EditorLeftWithSelection">
+      <i c="384" l="1652553706546" />
+    </e>
+    <e n="EditorLineEnd">
+      <i c="76" l="1652554044866" />
+    </e>
+    <e n="EditorLineEndWithSelection">
+      <i c="26" l="1651921127582" />
+    </e>
+    <e n="EditorLineStart">
+      <i c="43" l="1652554040085" />
+    </e>
+    <e n="EditorLineStartWithSelection">
+      <i c="13" l="1652553537630" />
+    </e>
+    <e n="EditorNextWord">
+      <i c="1" l="1651607486134" />
+    </e>
+    <e n="EditorPageDown">
+      <i c="1" l="1651570917451" />
+    </e>
+    <e n="EditorPaste">
+      <i c="182" l="1652287946729" />
+    </e>
+    <e n="EditorPreviousWord">
+      <i c="1" l="1651607486720" />
+    </e>
+    <e n="EditorPreviousWordWithSelection">
+      <i c="2" l="1651570955828" />
+    </e>
+    <e n="EditorRight">
+      <i c="1230" l="1652554042515" />
+    </e>
+    <e n="EditorRightWithSelection">
+      <i c="532" l="1652553714980" />
+    </e>
+    <e n="EditorScrollUp">
+      <i c="1" l="1651607480871" />
+    </e>
+    <e n="EditorTab">
+      <i c="73" l="1652554040983" />
+    </e>
+    <e n="EditorTextStart">
+      <i c="1" l="1647256240293" />
+    </e>
+    <e n="EditorToggleInsertState">
+      <i c="6" l="1651852904509" />
+    </e>
+    <e n="EditorUp">
+      <i c="852" l="1652554050810" />
+    </e>
+    <e n="EditorUpWithSelection">
+      <i c="70" l="1651933457917" />
+    </e>
+    <e n="Find">
+      <i c="1" l="1651224788800" />
+    </e>
+    <e n="FindInPath">
+      <i c="1" l="1651241439383" />
+    </e>
+    <e n="GotoDeclaration">
+      <i c="2" l="1651230808172" />
+    </e>
+    <e n="JumpToLastWindow">
+      <i c="2" l="1651921114765" />
+    </e>
+    <e n="Run">
+      <i c="149" l="1652553861200" />
+    </e>
+    <e n="RunToCursor">
+      <i c="333" l="1652560604958" />
+    </e>
+    <e n="SaveAll">
+      <i c="13" l="1652039622375" />
+    </e>
+    <e n="SearchEverywhere">
+      <i c="1" l="1652550887821" />
+    </e>
+    <e n="StepInto">
+      <i c="5" l="1652123205302" />
+    </e>
+    <e n="StepIntoMyCode">
+      <i c="1016" l="1652560642966" />
+    </e>
+    <e n="StepOut">
+      <i c="11" l="1652553677840" />
+    </e>
+    <e n="StepOver">
+      <i c="278" l="1652553025713" />
+    </e>
+    <e n="Stop">
+      <i c="134" l="1652554788737" />
+    </e>
+    <e n="ToggleLineBreakpoint">
+      <i c="41" l="1652553734304" />
+    </e>
+    <e n="Tree-selectNext">
+      <i c="2" l="1651921116226" />
+    </e>
+    <e n="Tree-selectParent">
+      <i c="1" l="1648223652125" />
+    </e>
+    <e n="Tree-selectPrevious">
+      <i c="1" l="1651921116949" />
+    </e>
+    <e n="com.intellij.codeInsight.daemon.impl.DaemonTooltipWithActionRenderer$SettingsActionGroup">
+      <i c="3" l="1651161360149" />
+    </e>
+    <e n="com.intellij.codeInsight.daemon.impl.DaemonTooltipWithActionRenderer$ShowActionsAction">
+      <i c="2" l="1651161361012" />
+    </e>
+    <e n="com.intellij.execution.console.ConsoleExecuteAction">
+      <i c="2" l="1650628730291" />
+    </e>
+    <e n="com.intellij.find.SearchTextArea$NewLineAction">
+      <i c="1" l="1651241522338" />
+    </e>
+    <e n="com.intellij.find.SearchTextArea$ShowHistoryAction">
+      <i c="1" l="1651241487493" />
+    </e>
+    <e n="com.intellij.find.editorHeaderActions.NextOccurrenceAction">
+      <i c="1" l="1651224854931" />
+    </e>
+    <e n="com.intellij.find.impl.FindUIHelper$1">
+      <i c="1" l="1651241579778" />
+    </e>
+    <e n="com.intellij.openapi.actionSystem.DefaultActionGroup">
+      <i c="6" l="1652123063656" />
+    </e>
+    <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$StatusAction">
+      <i c="4" l="1651763704540" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="57" l="1652123220500" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
+      <i c="3" l="1651506722320" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.welcomeScreen.ActionGroupPanelWrapper$5">
+      <i c="1" l="1646399955475" />
+    </e>
+    <e n="com.intellij.xdebugger.impl.breakpoints.RemoveBreakpointGutterIconAction">
+      <i c="17" l="1652552588013" />
+    </e>
+    <e n="com.intellij.xdebugger.impl.ui.tree.XDebuggerTree$7">
+      <i c="1" l="1650620261176" />
+    </e>
+  </component>
+</application>
