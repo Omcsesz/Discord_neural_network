@@ -4,12 +4,14 @@ from keras.models import Sequential
 from keras.layers import Dense
 from csv_processing import process
 
-
-logging.basicConfig(level=logging.DEBUG)
 _logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG)
+
+
 def main():
     try:
         X_train, X_test, y_train, y_test = process()
+        _logger.info(X_train.shape[1])
         model = Sequential()
         model.add(Dense(12, activation='relu', input_shape=(X_train.shape[1],)))
         model.add(Dense(20, activation='relu'))
@@ -20,6 +22,8 @@ def main():
                       metrics=['accuracy'])
 
         model.fit(X_train, y_train, epochs=20, batch_size=133, verbose=1)
+
+        model.summary()
 
         y_pred = model.predict(X_test)
 
