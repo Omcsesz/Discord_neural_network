@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 _logger = logging.getLogger(__name__)
 
 
-def TimeSinceLastZero(input_table):
+def TimeSinceLastZero(input_table, type):
     data_help = input_table.to_numpy()  # numpy array only used for getting size of array
     TimeSinceLastX = np.empty([np.shape(data_help)[0], np.shape(data_help)[1]])
     df = pd.DataFrame(data=input_table)
@@ -18,20 +18,20 @@ def TimeSinceLastZero(input_table):
         col_iter = 0  # column iterator, 0 at the beginning of each row
         TSLX = 0
         for cell in row:  # iterating in columns where cell is one cell of the row
-            if cell == 0:
-                TSLX += 1
-            else:
-                TSLX = 0
-            # if input_table.equals(discord_ctrl_bad) or input_table.equals(discord_ctrl_good): # counting bits or packets
-            #    if cell == 0: # if there are no bits/s TSLB counts up otherwise it's 0
-            #        TSLX += 1
-            #    else:
-            #        TSLX = 0
+            # if cell == 0:
+            #     TSLX += 1
             # else:
-            #    if cell < 40:  # if there are less than 40 packets/s TSLP counts up otherwise it's 0
-            #        TSLX += 1
-            #    else:
-            #        TSLX = 0
+            #     TSLX = 0
+            if type == "tcp": # counting bytes or packets
+                if cell == 0: # if there are no bits/s TSLB counts up otherwise it's 0
+                    TSLX += 1
+                else:
+                    TSLX = 0
+            else:
+                if cell < 20:  # if there are less than 40 packets/s TSLP counts up otherwise it's 0
+                    TSLX += 1
+                else:
+                    TSLX = 0
             TimeSinceLastX[row_no, col_iter] = TSLX  # filling the result table used later
             col_iter += 1
     return TimeSinceLastX
@@ -60,9 +60,9 @@ def process():
     TimeSinceLastPacket = {}
     TimeSinceLastByte = {}
     for key, input_table in udp_data.items():
-        TimeSinceLastPacket[key] = TimeSinceLastZero(input_table)
+        TimeSinceLastPacket[key] = TimeSinceLastZero(input_table, "udp")
     for key, input_table in tcp_data.items():
-        TimeSinceLastByte[key] = TimeSinceLastZero(input_table)
+        TimeSinceLastByte[key] = TimeSinceLastZero(input_table, "tcp")
     discord = pd.DataFrame()  # final DataFrames into which the preprocessed data goes
     # discord_bad = pd.DataFrame()
 
@@ -73,7 +73,7 @@ def process():
             discord_help[1] = TimeSinceLastPacket[key][i]
             discord_help[2] = tcp_data[key].to_numpy()[i]
             discord_help[3] = TimeSinceLastByte[key][i]
-            discord_help[4] = key
+            discord_help[4] = (key-1)/4
             discord = pd.concat([discord, discord_help], ignore_index=True)
 
     discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'quality']
