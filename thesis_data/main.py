@@ -18,7 +18,7 @@ def main():
         model.add(Dense(1, activation='sigmoid'))
 
         model.compile(loss='binary_crossentropy',
-                      optimizer='adam',
+                      optimizer='adadelta',
                       metrics=['accuracy'])
 
         model.fit(X_train, y_train, epochs=20, batch_size=133, verbose=1)
