@@ -13,7 +13,7 @@ def main():
         X_train, X_test, y_train, y_test = process()
         _logger.info(X_train.shape[1])
         model = Sequential()
-        model.add(Dense(12, activation='relu', input_shape=(X_train.shape[1],)))
+        model.add(Dense(12, activation='elu', input_shape=(X_train.shape[1],)))
         model.add(Dense(7, activation='elu'))
         model.add(Dense(1, activation='sigmoid'))
 

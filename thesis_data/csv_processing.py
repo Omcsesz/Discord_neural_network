@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 _logger = logging.getLogger(__name__)
 
 
-def TimeSinceLastZero(input_table, type):
+def TimeSinceLastZero(input_table, s_type):
     data_help = input_table.to_numpy()  # numpy array only used for getting size of array
     TimeSinceLastX = np.empty([np.shape(data_help)[0], np.shape(data_help)[1]])
     df = pd.DataFrame(data=input_table)
@@ -22,7 +22,7 @@ def TimeSinceLastZero(input_table, type):
             #     TSLX += 1
             # else:
             #     TSLX = 0
-            if type == "tcp": # counting bytes or packets
+            if s_type == "tcp": # counting bytes or packets
                 if cell == 0: # if there are no bits/s TSLB counts up otherwise it's 0
                     TSLX += 1
                 else:
