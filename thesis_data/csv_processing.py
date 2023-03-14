@@ -49,39 +49,50 @@ def Import_Files():
         for i_loss in loss:
             #            if i_kbit == 70 and i_loss == 10:
             #                continue
-            udp_data[quality] = pd.read_csv(f"{current_dir}/csv/udp/{i_kbit}_{i_loss}_udp.csv", sep=';', header=None)
-            tcp_data[quality] = pd.read_csv(f"{current_dir}/csv/tcp/{i_kbit}_{i_loss}_tcp.csv", sep=';', header=None)
+            udp_data[quality] = {}
+            tcp_data[quality] = {}
+            udp_data[quality]['data_stream'] = pd.read_csv(f"{current_dir}/csv/udp/{i_kbit}_{i_loss}_udp.csv", sep=';', header=None)
+            udp_data[quality]['kbit'] = i_kbit
+            udp_data[quality]['loss'] = i_loss
+            tcp_data[quality]['data_stream'] = pd.read_csv(f"{current_dir}/csv/tcp/{i_kbit}_{i_loss}_tcp.csv", sep=';', header=None)
+            tcp_data[quality]['kbit'] = i_kbit
+            tcp_data[quality]['loss'] = i_loss
             quality += 0.5
     return udp_data, tcp_data
 
 
 def process():
-    udp_data, tcp_data = Import_Files()
-    TimeSinceLastPacket = {}
-    TimeSinceLastByte = {}
-    for key, input_table in udp_data.items():
-        TimeSinceLastPacket[key] = TimeSinceLastZero(input_table, "udp")
-    for key, input_table in tcp_data.items():
-        TimeSinceLastByte[key] = TimeSinceLastZero(input_table, "tcp")
-    discord = pd.DataFrame()  # final DataFrames into which the preprocessed data goes
-    # discord_bad = pd.DataFrame()
+    try:
+        udp_data, tcp_data = Import_Files()
+        TimeSinceLastPacket = {}
+        TimeSinceLastByte = {}
+        for key, input_table in udp_data.items():
+            TimeSinceLastPacket[key] = TimeSinceLastZero(input_table['data_stream'], "udp")
+        for key, input_table in tcp_data.items():
+            TimeSinceLastByte[key] = TimeSinceLastZero(input_table['data_stream'], "tcp")
+        discord = pd.DataFrame()  # final DataFrames into which the preprocessed data goes
+        # discord_bad = pd.DataFrame()
 
-    for key in udp_data:
-        for i in range(udp_data[key].shape[0]):
-            discord_help = pd.DataFrame()
-            discord_help[0] = udp_data[key].to_numpy()[i]
-            discord_help[1] = TimeSinceLastPacket[key][i]
-            discord_help[2] = tcp_data[key].to_numpy()[i]
-            discord_help[3] = TimeSinceLastByte[key][i]
-            discord_help[4] = (key-1)/4
-            discord = pd.concat([discord, discord_help], ignore_index=True)
+        for key in udp_data:
+            for i in range(udp_data[key]['data_stream'].shape[0]):
+                discord_help = pd.DataFrame()
+                discord_help[0] = udp_data[key]['data_stream'].to_numpy()[i]
+                discord_help[1] = TimeSinceLastPacket[key][i]
+                discord_help[2] = tcp_data[key]['data_stream'].to_numpy()[i]
+                discord_help[3] = TimeSinceLastByte[key][i]
+                discord_help[4] = udp_data[key]['kbit']
+                discord_help[5] = udp_data[key]['loss']
+                discord_help[6] = (key-1)/4
+                discord = pd.concat([discord, discord_help], ignore_index=True)
 
-    discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'quality']
-    X = discord.iloc[:, 0:4]
-    y = np.ravel(discord.quality)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-    scaler = StandardScaler().fit(X_train)
-    X_train = scaler.transform(X_train)
-    X_test = scaler.transform(X_test)
-    return X_train, X_test, y_train, y_test
+        discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'kbit', 'loss', 'quality']
+        X = discord.iloc[:, 0:6]
+        y = np.ravel(discord.quality)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+        scaler = StandardScaler().fit(X_train)
+        X_train = scaler.transform(X_train)
+        X_test = scaler.transform(X_test)
+        return X_train, X_test, y_train, y_test
+    except Exception as e:
+        _logger.error(e)
 
