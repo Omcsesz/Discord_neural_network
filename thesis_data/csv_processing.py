@@ -86,6 +86,7 @@ def process():
                 discord = pd.concat([discord, discord_help], ignore_index=True)
 
         discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'kbit', 'loss', 'quality']
+        discord.to_csv(f'{os.path.dirname(os.path.realpath(__file__))}/neural_network_inputs.csv', sep=',')
         X = discord.iloc[:, 0:6]
         y = np.ravel(discord.quality)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
