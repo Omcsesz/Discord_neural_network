@@ -65,13 +65,18 @@ def Import_Files():
             tcp_data[quality] = {}
             retran = pd.read_csv(f"{current_dir}/test/csv/tcp/{i_kbit}_{i_loss}_retran.csv", sep=';', header=None)
             retran = retran.fillna(0)
-            tcp_len = pd.DataFrame(0, index=range(130), columns=range(1))
-            retransmissions = pd.DataFrame(0, index=range(130), columns=range(1))
-            for row_no, row in retran.iterrows():
+            tcp_len = pd.DataFrame(0, index=range(10), columns=range(130))
+            retransmissions = pd.DataFrame(0, index=range(10), columns=range(130))
+            row_no = 0
+            prev_time = 0
+            for _, row in retran.iterrows():
+                if int(row[0]) < prev_time:
+                    row_no += 1
+                prev_time = int(row[0])
                 if int(row[0]) >= 130:
                     continue
-                tcp_len[0][int(row[0])] += row[1]
-                retransmissions[0][int(row[0])] += row[2]
+                tcp_len[int(row[0])][row_no] += row[1]
+                retransmissions[int(row[0])][row_no] += row[2]
             tcp_data[quality]['retransmission'] = retransmissions
             tcp_data[quality]['tcp_len'] = tcp_len
             udp_data[quality]['data_stream'] = pd.read_csv(f"{current_dir}/csv/udp/{i_kbit}_{i_loss}_udp_m.csv", sep=';', header=None)
@@ -106,9 +111,9 @@ def process():
                 discord_help[3] = TimeSinceLastByte[key][i]
                 discord_help[4] = udp_data[key]['kbit']
                 discord_help[5] = udp_data[key]['loss']
-                discord_help[6] = tcp_data[key]['retransmission']
+                discord_help[6] = tcp_data[key]['retransmission'].to_numpy()[i]
                 discord_help[6] = TimeSinceLastRetran[key][i]
-                discord_help[7] = tcp_data[key]['tcp_len']
+                discord_help[7] = tcp_data[key]['tcp_len'].to_numpy()[i]
                 discord_help[8] = (key - 1) / 4
                 discord = pd.concat([discord, discord_help], ignore_index=True)
 
