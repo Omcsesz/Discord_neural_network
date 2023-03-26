@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 
 logging.basicConfig(level=logging.DEBUG) # format='%(levelname) [%(filename):%(lineno)] %(message)'
 _logger = logging.getLogger(__name__)
+pd.set_option('display.precision', 9)
 
 
 def TimeSinceLastZero(input_table, s_type):
@@ -46,8 +47,8 @@ def Import_Files():
     current_dir = os.path.dirname(os.path.realpath(__file__))
     for i_kbit in kbit:
         for i_loss in loss:
-            #            if i_kbit == 70 and i_loss == 10:
-            #                continue
+#            if i_kbit == 70 and i_loss == 10:
+#                continue
             for s_type in stream_type:
                 with open(f"{current_dir}/csv/{s_type}/{i_kbit}_{i_loss}_{s_type}.csv", 'r') as rf:
                     reader = csv.reader(rf, delimiter=';')
@@ -64,9 +65,40 @@ def Import_Files():
             udp_data[quality] = {}
             tcp_data[quality] = {}
             retran = pd.read_csv(f"{current_dir}/test/csv/tcp/{i_kbit}_{i_loss}_retran.csv", sep=';', header=None)
+            jit = pd.read_csv(f"{current_dir}/test/csv/udp/{i_kbit}_{i_loss}_jitter.csv", sep=';', header=None)
             retran = retran.fillna(0)
+            jit = jit.fillna(0)
             tcp_len = pd.DataFrame(0, index=range(10), columns=range(130))
             retransmissions = pd.DataFrame(0, index=range(10), columns=range(130))
+            max_jitter = pd.DataFrame(0, index=range(10), columns=range(130))
+            missing_packets = pd.DataFrame(0, index=range(10), columns=range(130))
+            row_no = 0
+            prev_row_no = 0
+            prev_time = 0
+            avg_counter = 0
+            avg_sum = 0
+            prev_delta = 0
+            prev_seq_num = 0
+            for _, row in jit.iterrows():
+                if int(row[0]) < prev_time:
+                    row_no += 1
+                if int(row[0]) >= 130:
+                    continue
+                if row[2] != 0:
+                    if int(row[2]) != prev_seq_num+1 and prev_seq_num != 0 and int(row[2]) > prev_seq_num and row_no == prev_row_no and int(row[2])-prev_seq_num < 100:
+                        missing_packets[int(row[0])][row_no] += int(row[2])-prev_seq_num
+                    prev_seq_num = int(row[2])
+                if int(row[0]) == prev_time:
+                    avg_sum += row[1]
+                    avg_counter += 1
+                    if row[1] > prev_delta:
+                        max_delta = row[1]
+                else:
+                    avg = avg_sum/avg_counter
+                    max_jitter[int(row[0])][row_no] = abs(max_delta-avg)
+                prev_row_no = row_no
+                prev_time = int(row[0])
+
             row_no = 0
             prev_time = 0
             for _, row in retran.iterrows():
@@ -79,6 +111,8 @@ def Import_Files():
                 retransmissions[int(row[0])][row_no] += row[2]
             tcp_data[quality]['retransmission'] = retransmissions
             tcp_data[quality]['tcp_len'] = tcp_len
+            udp_data[quality]['max_jitter'] = max_jitter
+            udp_data[quality]['missing_packets'] = missing_packets
             udp_data[quality]['data_stream'] = pd.read_csv(f"{current_dir}/csv/udp/{i_kbit}_{i_loss}_udp_m.csv", sep=';', header=None)
             udp_data[quality]['kbit'] = i_kbit
             udp_data[quality]['loss'] = i_loss
@@ -95,6 +129,7 @@ def process():
         TimeSinceLastPacket = {}
         TimeSinceLastByte = {}
         TimeSinceLastRetran = {}
+        TimeSinceLastMissing = {}
         for key, input_table in udp_data.items():
             TimeSinceLastPacket[key] = TimeSinceLastZero(input_table['data_stream'], "udp")
         for key, input_table in tcp_data.items():
@@ -114,12 +149,14 @@ def process():
                 discord_help[6] = tcp_data[key]['retransmission'].to_numpy()[i]
                 discord_help[6] = TimeSinceLastRetran[key][i]
                 discord_help[7] = tcp_data[key]['tcp_len'].to_numpy()[i]
-                discord_help[8] = (key - 1) / 4
+                discord_help[8] = udp_data[key]['max_jitter'].to_numpy()[i]
+                discord_help[9] = udp_data[key]['missing_packets'].to_numpy()[i]
+                discord_help[10] = (key - 1) / 4
                 discord = pd.concat([discord, discord_help], ignore_index=True)
 
-        discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'kbit', 'loss', 'retransmissions', 'tcp_len', 'quality']
+        discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'kbit', 'loss', 'retransmissions', 'tcp_len', 'max_jitter', 'missing_packets', 'quality']
         discord.to_csv(f'{os.path.dirname(os.path.realpath(__file__))}/neural_network_inputs.csv', sep=',')
-        X = discord.iloc[:, 0:8]
+        X = discord.iloc[:, 0:10]
         y = np.ravel(discord.quality)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
         scaler = StandardScaler().fit(X_train)
