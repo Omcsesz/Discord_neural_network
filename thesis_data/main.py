@@ -1,5 +1,6 @@
 
 import logging
+import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense
 from csv_processing import process
@@ -11,7 +12,6 @@ logging.basicConfig(level=logging.DEBUG)
 def main():
     try:
         X_train, X_test, y_train, y_test = process()
-        _logger.info(X_train.shape[1])
         model = Sequential()
         model.add(Dense(12, activation='elu', input_shape=(X_train.shape[1],)))
         model.add(Dense(7, activation='elu'))
@@ -23,8 +23,17 @@ def main():
 
         model.fit(X_train, y_train, epochs=20, batch_size=133, verbose=1)
         y_pred = model.predict(X_test)
-        #for i in range(100):
-        #    print(y_pred[i])
+        good = 0
+        predictions = pd.DataFrame(0, index=range(1000), columns=range(3))
+        for i in range(1000):
+            predictions[0][i] = y_test[i]
+            predictions[1][i] = y_pred[i]
+            if y_pred[i] - y_test[i] < 0.062:
+                good += 1
+                predictions[2][i] = 1
+            else:
+                predictions[2][i] = 0
+        print(f'Accuracy fr fr: {good/1000}')
         score = model.evaluate(X_test, y_test, verbose=1)
         _logger.info(score)
         return 0
