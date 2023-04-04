@@ -164,21 +164,21 @@ def process():
                 discord_help[1] = TimeSinceLastPacket[key][i]
                 discord_help[2] = tcp_data[key]['data_stream'].to_numpy()[i]
                 discord_help[3] = TimeSinceLastByte[key][i]
-                discord_help[4] = udp_data[key]['kbit']
-                discord_help[5] = udp_data[key]['loss']
-                discord_help[6] = tcp_data[key]['retransmission'].to_numpy()[i]
-                discord_help[7] = TimeSinceLastRetran[key][i]
-                discord_help[8] = tcp_data[key]['tcp_len'].to_numpy()[i]
-                discord_help[9] = udp_data[key]['max_jitter'].to_numpy()[i]
-                discord_help[10] = udp_data[key]['avg_jitter'].to_numpy()[i]
-                discord_help[11] = udp_data[key]['missing_packets'].to_numpy()[i]
-                discord_help[12] = udp_data[key]['avg_missing_packets'].to_numpy()[i]
-                discord_help[13] = (key - 1) / 4
+                #discord_help[4] = udp_data[key]['kbit']
+                #discord_help[5] = udp_data[key]['loss']
+                discord_help[4] = tcp_data[key]['retransmission'].to_numpy()[i]
+                discord_help[5] = TimeSinceLastRetran[key][i]
+                #discord_help[6] = tcp_data[key]['tcp_len'].to_numpy()[i]
+                discord_help[6] = udp_data[key]['max_jitter'].to_numpy()[i]
+                discord_help[7] = udp_data[key]['avg_jitter'].to_numpy()[i]
+                #discord_help[8] = udp_data[key]['missing_packets'].to_numpy()[i]
+                discord_help[8] = udp_data[key]['avg_missing_packets'].to_numpy()[i]
+                discord_help[9] = (key - 1) / 4
                 discord = pd.concat([discord, discord_help], ignore_index=True)
 
-        discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'kbit', 'loss', 'retransmissions', 'TSLR', 'tcp_len', 'max_jitter', 'avg_jitter', 'missing_packets', 'avg_missing_packets', 'quality']
+        discord.columns = ['voice', 'TSLP', 'ctrl', 'TSLB', 'retransmissions', 'TSLR', 'max_jitter', 'avg_jitter', 'avg_missing_packets', 'quality']
         discord.to_csv(f'{os.path.dirname(os.path.realpath(__file__))}/neural_network_inputs.csv', sep=',')
-        X = discord.iloc[:, 0:13]
+        X = discord.iloc[:, 0:10]
         y = np.ravel(discord.quality)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
         scaler = StandardScaler().fit(X_train)
